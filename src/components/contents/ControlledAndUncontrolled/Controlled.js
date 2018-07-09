@@ -4,14 +4,19 @@ export default class Controlled extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: ''
+      inputValue: ""
     };
   }
 
   handleOnChange = event => {
-    this.setState({
-      inputValue: event.target.value
-    });
+    const { value } = event.target;
+    if(/^\d+$/.test(value)){
+      this.setState({
+        inputValue: value
+      });
+    }else{
+      window.alert('error, input must be a number')
+    }
   };
 
   handleOnSubmit = () => {
@@ -23,7 +28,6 @@ export default class Controlled extends PureComponent {
       <div>
         <form onSubmit={this.handleOnSubmit}>
           <input
-            type="number"
             value={this.state.inputValue}
             onChange={this.handleOnChange}
           />

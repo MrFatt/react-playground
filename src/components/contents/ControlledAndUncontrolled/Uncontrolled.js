@@ -1,23 +1,28 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 
 export default class Uncontrolled extends PureComponent {
   constructor(props) {
     super(props);
-    this.input = null;
+    this.input = React.createRef();
   }
 
   handleOnSubmit = () => {
-    window.alert(`Input value is ${this.input.value}`);
+    const { value } = this.input.current;
+    window.alert(
+      /^\d+$/.test(value)
+        ? `Input value is ${value}`
+        : `Error, Input value must be a number`
+    );
   };
 
   render() {
-    return(
+    return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
-          <input ref={element => this.input = element}/>
+          <input ref={this.input} />
           <button>Submit!</button>
         </form>
       </div>
-    )
+    );
   }
 }
