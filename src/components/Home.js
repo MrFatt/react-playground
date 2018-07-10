@@ -8,6 +8,9 @@ const Home = () => (
       <li>
         <Link to='ControlledAndUncontrolled'>Controlled Component & Uncontrolled Component</Link>
       </li>
+      <li>
+        <Link to='Context'>ContextAPI</Link>
+      </li>
     </ul>
   </div>
 );
