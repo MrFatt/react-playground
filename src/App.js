@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import ControlledAndUncontrolled from "./components/contents/ControlledAndUncontrolled";
 import Context from "./components/contents/Context";
+import Portals from "./components/contents/Portals";
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/ControlledAndUncontrolled" component={ControlledAndUncontrolled} />
           <Route exact path="/Context" component={Context} />
+          <Route exact path="/Portals" component={Portals} />
         </Switch>
       </div>
     );
