@@ -6,6 +6,7 @@ import ControlledAndUncontrolled from "./components/contents/ControlledAndUncont
 import Context from "./components/contents/Context";
 import Portals from "./components/contents/Portals";
 import Ref from "./components/contents/Ref";
+import ErrorBoundaries from "./components/contents/ErrorBoundaries";
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/Context" component={Context} />
           <Route exact path="/Portals" component={Portals} />
           <Route exact path="/Ref" component={Ref} />
+          <Route exact path="/ErrorBoundaries" component={ErrorBoundaries} />
         </Switch>
       </div>
     );

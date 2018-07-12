@@ -14,5 +14,9 @@ export default [
   {
     path: "Ref",
     title: "Create Ref & Forward Ref"
+  },
+  {
+    path: "ErrorBoundaries",
+    title: "Error Handling"
   }
 ];

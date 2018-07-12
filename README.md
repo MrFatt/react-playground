@@ -6,4 +6,4 @@ Demos play around  with React Documentation, Create React App and React Router..
 - Context
 - Portal
 - createRef & forwardRef
-- Error Boundaries(WIP)
+- Error Boundaries
