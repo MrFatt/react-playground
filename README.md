@@ -7,3 +7,4 @@ Demos play around  with React Documentation, Create React App and React Router..
 - Portal
 - createRef & forwardRef
 - Error Boundaries
+- Strict Mode

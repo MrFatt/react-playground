@@ -7,6 +7,7 @@ import Context from "./components/contents/Context";
 import Portals from "./components/contents/Portals";
 import Ref from "./components/contents/Ref";
 import ErrorBoundaries from "./components/contents/ErrorBoundaries";
+import StrictMode from "./components/contents/StrictMode";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route exact path="/Portals" component={Portals} />
           <Route exact path="/Ref" component={Ref} />
           <Route exact path="/ErrorBoundaries" component={ErrorBoundaries} />
+          <Route exact path="/StrictMode" component={StrictMode} />
         </Switch>
       </div>
     );

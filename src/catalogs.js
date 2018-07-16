@@ -18,5 +18,9 @@ export default [
   {
     path: "ErrorBoundaries",
     title: "Error Handling"
+  },
+  {
+    path: "StrictMode",
+    title: "Strict Mode"
   }
 ];
