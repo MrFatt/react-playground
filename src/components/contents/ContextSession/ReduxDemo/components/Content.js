@@ -1,5 +1,5 @@
 import React from "react";
 
-const Content = () => <div className="content">main content here</div>;
+const Content = () => <div className="content">Implemented by Redux</div>;
 
 export default Content;
