@@ -8,6 +8,10 @@ import Portals from "./components/contents/Portals";
 import Ref from "./components/contents/Ref";
 import ErrorBoundaries from "./components/contents/ErrorBoundaries";
 import StrictMode from "./components/contents/StrictMode";
+import ContextDemo from "./components/contents/ContextSession/ContextDemo/ContextDemo";
+import ReactDemo from "./components/contents/ContextSession/ReactDemo/ReactDemo";
+import NewContextDemo from "./components/contents/ContextSession/NewContextDemo/NewContextDemo";
+import ReduxDemo from "./components/contents/ContextSession/ReduxDemo/ReduxDemo";
 
 class App extends Component {
   render() {
@@ -22,6 +26,10 @@ class App extends Component {
           <Route exact path="/Ref" component={Ref} />
           <Route exact path="/ErrorBoundaries" component={ErrorBoundaries} />
           <Route exact path="/StrictMode" component={StrictMode} />
+          <Route exact path="/context-demo/react" component={ReactDemo}/>
+          <Route exact path="/context-demo/redux" component={ReduxDemo}/>
+          <Route exact path="/context-demo/context" component={ContextDemo}/>
+          <Route exact path="/context-demo/new-context" component={NewContextDemo}/>
         </Switch>
       </div>
     );
