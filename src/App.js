@@ -12,6 +12,7 @@ import ContextDemo from "./components/contents/ContextSession/ContextDemo/Contex
 import ReactDemo from "./components/contents/ContextSession/ReactDemo/ReactDemo";
 import NewContextDemo from "./components/contents/ContextSession/NewContextDemo/NewContextDemo";
 import ReduxDemo from "./components/contents/ContextSession/ReduxDemo/ReduxDemo";
+import HooksDemo from "./components/contents/Hooks";
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path="/context-demo/redux" component={ReduxDemo}/>
           <Route exact path="/context-demo/context" component={ContextDemo}/>
           <Route exact path="/context-demo/new-context" component={NewContextDemo}/>
+          <Route exact path="/hooks" component={HooksDemo}/>
         </Switch>
       </div>
     );

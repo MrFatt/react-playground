@@ -38,5 +38,9 @@ export default [
   {
     path: "context-demo/new-context",
     title: "Context Session Demo(implemented by 16.6 ContextAPI)"
+  },
+  {
+    path: "hooks",
+    title: "React Hooks"
   }
 ];
