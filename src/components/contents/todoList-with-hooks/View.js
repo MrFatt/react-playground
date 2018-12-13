@@ -3,10 +3,13 @@ import {
   Section,
   Title,
   AddTODOContainer,
-  Button,
+  AddButton,
   RemoveButton,
   TodoList,
-  TodoItem
+  TodoItem,
+  TodoInput,
+  SemanticIcon,
+  TodoContent
 } from "./style";
 
 export default () => {
@@ -39,18 +42,19 @@ export default () => {
     <Section>
       <Title>TODO List</Title>
       <AddTODOContainer>
-        <input
+        <TodoInput
           value={text}
           onChange={e => setText(e.target.value)}
           type="text"
         />
-        <Button onClick={addTodo}>Add</Button>
+        <AddButton onClick={addTodo}>Add</AddButton>
       </AddTODOContainer>
       <TodoList>
         {todos.map((todo, index) => (
           <TodoItem key={`${index}-${todo.text}`} completed={todo.completed}>
-            <span onClick={completeTodo(index)}>{todo.text}</span>
-            <RemoveButton onClick={removeTodo(index)}>Remove</RemoveButton>
+            <SemanticIcon name="caret right" />
+            <TodoContent onClick={completeTodo(index)}>{todo.text}</TodoContent>
+            <SemanticIcon name="delete" onClick={removeTodo(index)} />
           </TodoItem>
         ))}
       </TodoList>
