@@ -17,3 +17,22 @@ export const Button = styled.button`
   margin-left: 20px;
   width: 40px;
 `;
+
+export const RemoveButton = styled.button`
+  margin-left: 20px;
+  width: 70px;
+`;
+
+export const CompleteButton = styled.button`
+  margin-left: 20px;
+  width: 70px;
+`;
+
+export const TodoList = styled.ul`
+  margin-top: 50px;
+`;
+
+export const TodoItem = styled.div`
+  margin-top: 20px;
+  ${props => props.completed && "text-decoration-line: line-through;"};
+`;

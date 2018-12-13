@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Section, Title, AddTODOContainer, Button } from "./style";
+import {
+  Section,
+  Title,
+  AddTODOContainer,
+  Button,
+  RemoveButton,
+  TodoList,
+  TodoItem
+} from "./style";
 
 export default () => {
   const [todos, setTodos] = useState([]);
@@ -8,6 +16,25 @@ export default () => {
     setTodos(todos => [...todos, { text: text, completed: false }]);
     setText("");
   };
+
+  const removeTodo = index => () => {
+    setTodos(todos => [
+      ...todos.slice(0, index),
+      ...todos.slice(index + 1, todos.length)
+    ]);
+  };
+
+  const completeTodo = index => () => {
+    setTodos(todos => {
+      const selectedTodo = todos[index];
+      return [
+        ...todos.slice(0, index),
+        { text: selectedTodo.text, completed: !selectedTodo.completed },
+        ...todos.slice(index + 1, todos.length)
+      ];
+    });
+  };
+
   return (
     <Section>
       <Title>TODO List</Title>
@@ -19,11 +46,14 @@ export default () => {
         />
         <Button onClick={addTodo}>Add</Button>
       </AddTODOContainer>
-      <ul>
+      <TodoList>
         {todos.map((todo, index) => (
-          <li key={`${index}-${todo.text}`}>{todo.text}</li>
+          <TodoItem key={`${index}-${todo.text}`} completed={todo.completed}>
+            <span onClick={completeTodo(index)}>{todo.text}</span>
+            <RemoveButton onClick={removeTodo(index)}>Remove</RemoveButton>
+          </TodoItem>
         ))}
-      </ul>
+      </TodoList>
     </Section>
   );
 };
