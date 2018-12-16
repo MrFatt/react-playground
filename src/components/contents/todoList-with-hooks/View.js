@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Section, Title } from "./style";
 import TodoInput from "./components/TodoInput";
 import useTodo from "./hooks/useTodos";

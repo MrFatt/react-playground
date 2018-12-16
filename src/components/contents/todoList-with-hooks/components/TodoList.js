@@ -18,6 +18,7 @@ export default props => {
 
   const { todos, onItemClick, onItemRemove } = props;
   const list = completedfilter ? todos.filter(todo => !todo.completed) : todos;
+
   return (
     <TodoListContainer>
       {list.map((todo, index) => (
