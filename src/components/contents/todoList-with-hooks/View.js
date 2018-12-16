@@ -17,35 +17,20 @@ import {
   CheckedIcon
 } from "./style";
 
+import useTodo from "./hooks/useTodos";
+
 export default () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, addTodo, removeTodo, completeTodo] = useTodo([]);
   const [text, setText] = useState("");
   const [completedfilter, setCompletedFilter] = useState(false);
-  const addTodo = () => {
-    setTodos(todos => [...todos, { text: text, completed: false }]);
-    setText("");
-  };
-
-  const removeTodo = index => () => {
-    setTodos(todos => [
-      ...todos.slice(0, index),
-      ...todos.slice(index + 1, todos.length)
-    ]);
-  };
-
-  const completeTodo = index => () => {
-    setTodos(todos => {
-      const selectedTodo = todos[index];
-      return [
-        ...todos.slice(0, index),
-        { text: selectedTodo.text, completed: !selectedTodo.completed },
-        ...todos.slice(index + 1, todos.length)
-      ];
-    });
-  };
 
   const toggleFilter = () => {
     setCompletedFilter(completedfilter => !completedfilter);
+  };
+
+  const addTodoHandler = () => {
+    addTodo(text);
+    setText("");
   };
 
   return (
@@ -57,7 +42,7 @@ export default () => {
           onChange={e => setText(e.target.value)}
           type="text"
         />
-        <AddButton onClick={addTodo}>Add</AddButton>
+        <AddButton onClick={addTodoHandler}>Add</AddButton>
       </AddTODOContainer>
       <TodoList>
         {completedfilter
