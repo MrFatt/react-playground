@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Input, Button, Icon } from "semantic-ui-react";
 
 export const Section = styled.section`
-  width: 308px;
+  width: 508px;
   margin: 0 auto;
   text-align: center;
 `;
@@ -26,9 +26,34 @@ export const RemoveButton = styled(Button)`
   }
 `;
 
-export const SemanticIcon = Icon;
+export const ShowAllButton = styled(Button)`
+  &&& {
+    margin-left: 20px;
+  }
+`;
 
-export const TodoInput = Input;
+export const ShowCompletedButton = styled(Button)`
+  &&& {
+    margin-left: 20px;
+  }
+`;
+
+export const ShowUncompletedButton = styled(Button)`
+  &&& {
+    margin-left: 20px;
+  }
+`;
+
+export const CheckedIcon = styled(Icon)``;
+
+export const DeleteIcon = styled(Icon)`
+  position: absolute;
+  right: 230px;
+`;
+
+export const TodoInput = styled(Input)`
+  width: 380px;
+`;
 
 export const TodoList = styled.ul`
   margin-top: 50px;
@@ -36,10 +61,14 @@ export const TodoList = styled.ul`
 `;
 
 export const TodoItem = styled.div`
-  margin-top: 20px;
-  ${props => props.completed && "text-decoration-line: line-through;"};
+  margin: 30px 20px;
 `;
 
 export const TodoContent = styled.span`
   margin: 5px 15px;
+  ${props => props.completed && "text-decoration-line: line-through;"};
+`;
+
+export const ToggleButtonContainer = styled.div`
+  text-align: center;
 `;
