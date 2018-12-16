@@ -47,8 +47,8 @@ export const ShowUncompletedButton = styled(Button)`
 export const CheckedIcon = styled(Icon)``;
 
 export const DeleteIcon = styled(Icon)`
-  position: absolute;
-  right: 230px;
+  position: relative;
+  left: 360px;
 `;
 
 export const TodoInput = styled(Input)`

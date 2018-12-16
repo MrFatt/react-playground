@@ -2,48 +2,29 @@ import React, { useState } from "react";
 import {
   Section,
   Title,
-  AddTODOContainer,
-  AddButton,
-  RemoveButton,
   TodoList,
   TodoItem,
-  TodoInput,
   DeleteIcon,
   TodoContent,
   ShowAllButton,
-  ShowCompletedButton,
-  ShowUncompletedButton,
   ToggleButtonContainer,
   CheckedIcon
 } from "./style";
-
+import TodoInput from "./components/TodoInput";
 import useTodo from "./hooks/useTodos";
 
 export default () => {
   const [todos, addTodo, removeTodo, completeTodo] = useTodo([]);
-  const [text, setText] = useState("");
   const [completedfilter, setCompletedFilter] = useState(false);
 
   const toggleFilter = () => {
     setCompletedFilter(completedfilter => !completedfilter);
   };
 
-  const addTodoHandler = () => {
-    addTodo(text);
-    setText("");
-  };
-
   return (
     <Section>
       <Title>TODO List</Title>
-      <AddTODOContainer>
-        <TodoInput
-          value={text}
-          onChange={e => setText(e.target.value)}
-          type="text"
-        />
-        <AddButton onClick={addTodoHandler}>Add</AddButton>
-      </AddTODOContainer>
+      <TodoInput clickHandler={addTodo} />
       <TodoList>
         {completedfilter
           ? todos
