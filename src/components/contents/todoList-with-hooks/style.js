@@ -55,7 +55,7 @@ export const TodoInput = styled(Input)`
   width: 380px;
 `;
 
-export const TodoList = styled.ul`
+export const TodoListContainer = styled.ul`
   margin-top: 50px;
   text-align: left;
 `;
