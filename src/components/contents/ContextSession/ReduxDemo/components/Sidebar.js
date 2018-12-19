@@ -1,9 +1,9 @@
 import React from "react";
 import UserStatus from "./UserStatus";
 
-const Sidebar = ({ user }) => (
+const Sidebar = () => (
   <div className="sidebar">
-    <UserStatus user={user} />
+    <UserStatus />
   </div>
 );
 

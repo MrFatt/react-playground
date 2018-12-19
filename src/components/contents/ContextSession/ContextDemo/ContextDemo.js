@@ -21,8 +21,8 @@ class ReactDemo extends React.Component {
     return (
       <div className="app">
         <UserContext.Provider value={this.state.user}>
-          <Nav user={user} />
-          <Body user={user} />
+          <Nav />
+          <Body />
         </UserContext.Provider>
       </div>
     );
